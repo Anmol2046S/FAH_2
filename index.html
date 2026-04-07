@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAH AI - Smart Food Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glow"></div>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">FAH <span>AI</span></div>
+            <div class="streak">
+                <span id="streak-counter">Streak: 4</span> 🔥
+            </div>
+        </header>
+
+        <!-- Main Input Area -->
+        <main>
+            <section class="input-card">
+                <h1>What did you eat today?</h1>
+                <p>Describe your meal, and our AI will calculate macros and give you a Smart Nudge.</p>
+                <div class="input-group">
+                    <textarea id="food-input" placeholder="E.g. Avocado toast and 2 poached eggs" rows="3"></textarea>
+                    <button id="analyze-btn">
+                        <span>Analyze Meal</span>
+                        <div class="spinner" id="btn-spinner"></div>
+                    </button>
+                    <div id="error-message" class="error-text"></div>
+                </div>
+            </section>
+
+            <!-- Results Dashboard (Hidden by default) -->
+            <section class="results-dashboard" id="results-dashboard" style="display: none;">
+                <div class="results-header">
+                    <h2>Analysis Summary</h2>
+                    <div class="health-score">
+                        <span id="score-val">--</span>/100 Health
+                    </div>
+                </div>
+                
+                <div class="macros-grid">
+                    <div class="macro-card">
+                        <div class="macro-label">Calories</div>
+                        <div class="macro-value" id="val-cal">--</div>
+                    </div>
+                    <div class="macro-card">
+                        <div class="macro-label">Protein</div>
+                        <div class="macro-value" id="val-p">--g</div>
+                    </div>
+                    <div class="macro-card">
+                        <div class="macro-label">Carbs</div>
+                        <div class="macro-value" id="val-c">--g</div>
+                    </div>
+                    <div class="macro-card">
+                        <div class="macro-label">Fat</div>
+                        <div class="macro-value" id="val-f">--g</div>
+                    </div>
+                </div>
+
+                <div class="nudge-card">
+                    <h3>🧠 Smart Nudge</h3>
+                    <p id="nudge-text">Waiting for analysis...</p>
+                </div>
+
+                <button id="track-btn" class="secondary-btn">Log Meal to Streak</button>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
